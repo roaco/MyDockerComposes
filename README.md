@@ -1,2 +1,3 @@
 # MyDockerComposes
-Here, I will save my files containing docker-compose from different services.
+Here, I will save my files containing docker-compose of different services.
+Autor: Rodrigo Acosta
