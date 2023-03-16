@@ -26,5 +26,5 @@ services:
     image: adminer
     restart: always
     ports:
-      - 8081:8080
+      - 8086:8080
     hostname: server-adminer
