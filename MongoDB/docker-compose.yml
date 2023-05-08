@@ -2,6 +2,9 @@
 # Para administracino web ingresar al local host por el puerto configurado de mongo-express
 version: '3.1'
 
+volumes:
+  mongo_db:
+
 services:
 
   mongo:
@@ -13,7 +16,7 @@ services:
     ports:
      - '27017:27017'
     volumes:
-      - './volumenes/mongodb:/data/db' 
+      - mongo_db:/data/db 
 
   mongo-express:
     image: mongo-express

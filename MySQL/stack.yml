@@ -4,6 +4,9 @@
 # docker-compose -f stack.yml up -d
 version: '3.8'
 
+volumes:
+  mysql_db:
+
 services:
 
   db:
@@ -18,7 +21,7 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: rodri
     volumes:
-      - './volumenes/postgres:/var/lib/mysql' 
+      - mysql_db:/var/lib/mysql 
     hostname: server-mysql
 
   adminer:

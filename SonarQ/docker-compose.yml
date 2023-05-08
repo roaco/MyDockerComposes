@@ -1,5 +1,8 @@
 version: '3.8'
 
+volumes:
+  postgres_db:
+
 services:
   sonarqube:
     image: sonarqube:latest
@@ -19,4 +22,4 @@ services:
       - POSTGRES_PASSWORD=sonar
       - POSTGRES_DB=sonar
     volumes:
-      - './volumenes/postgres:/var/lib/postgresql/data'
+      - postgres_db:/var/lib/postgresql/data
