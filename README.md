@@ -77,19 +77,19 @@ Crea e inicia todos los contenedores definidos en el archivo `docker-compose.yml
 
 ```bash
 # Inicia los servicios en modo interactivo
-docker compose up
+docker-compose up
 
 # Inicia los servicios en background (modo detached)
-docker compose up -d
+docker-compose up -d
 
 # Inicia y construye imágenes si es necesario
-docker compose up --build
+docker-compose up --build
 
 # Inicia servicios específicos
-docker compose up servicio1 servicio2
+docker-compose up servicio1 servicio2
 
 # Inicia con output en tiempo real
-docker compose up -v
+docker-compose up -v
 ```
 
 #### 2. **`docker compose down`**
@@ -97,16 +97,16 @@ Detiene y elimina todos los contenedores, redes y volúmenes asociados.
 
 ```bash
 # Detiene y elimina contenedores
-docker compose down
+docker-compose down
 
 # Detiene, elimina y limpia volúmenes
-docker compose down -v
+docker-compose down -v
 
 # Elimina también las imágenes
-docker compose down --rmi all
+docker-compose down --rmi all
 
 # Elimina solo imágenes locales (no las descargadas)
-docker compose down --rmi local
+docker-compose down --rmi local
 ```
 
 #### 3. **`docker compose ps`**
@@ -114,13 +114,13 @@ Muestra el estado de todos los contenedores del proyecto.
 
 ```bash
 # Lista contenedores en ejecución
-docker compose ps
+docker-compose ps
 
 # Muestra todos los contenedores (incluyendo detenidos)
-docker compose ps -a
+docker-compose ps -a
 
 # Salida en formato JSON
-docker compose ps --format json
+docker-compose ps --format json
 ```
 
 #### 4. **`docker compose logs`**
@@ -128,22 +128,22 @@ Visualiza los registros (logs) de los contenedores.
 
 ```bash
 # Muestra logs de todos los servicios
-docker compose logs
+docker-compose logs
 
 # Muestra logs de un servicio específico
-docker compose logs nombre_servicio
+docker-compose logs nombre_servicio
 
 # Muestra últimas 50 líneas
-docker compose logs --tail 50
+docker-compose logs --tail 50
 
 # Sigue los logs en tiempo real
-docker compose logs -f
+docker-compose logs -f
 
 # Muestra logs con timestamp
-docker compose logs --timestamps
+docker-compose logs --timestamps
 
 # Combina opciones: últimas líneas en tiempo real
-docker compose logs -f --tail 100
+docker-compose logs -f --tail 100
 ```
 
 #### 5. **`docker compose exec`**
@@ -151,16 +151,16 @@ Ejecuta comandos dentro de un contenedor en ejecución.
 
 ```bash
 # Ejecuta un comando en un contenedor
-docker compose exec nombre_servicio comando
+docker-compose exec nombre_servicio comando
 
 # Ejecuta shell interactivo
-docker compose exec -it nombre_servicio /bin/bash
+docker-compose exec -it nombre_servicio /bin/bash
 
 # Ejecuta como usuario específico
-docker compose exec -u usuario nombre_servicio comando
+docker-compose exec -u usuario nombre_servicio comando
 
 # Desactiva asignación de pseudo-terminal
-docker compose exec -T nombre_servicio comando
+docker-compose exec -T nombre_servicio comando
 ```
 
 #### 6. **`docker compose build`**
@@ -168,16 +168,16 @@ Construye imágenes para los servicios definidos en el archivo de composición.
 
 ```bash
 # Construye todas las imágenes
-docker compose build
+docker-compose build
 
 # Construye un servicio específico
-docker compose build nombre_servicio
+docker-compose build nombre_servicio
 
 # Construye sin usar caché
-docker compose build --no-cache
+docker-compose build --no-cache
 
 # Construye y etiqueta imágenes
-docker compose build --tag nombre:version
+docker-compose build --tag nombre:version
 ```
 
 #### 7. **`docker compose restart`**
@@ -185,13 +185,13 @@ Reinicia los contenedores en ejecución.
 
 ```bash
 # Reinicia todos los servicios
-docker compose restart
+docker-compose restart
 
 # Reinicia un servicio específico
-docker compose restart nombre_servicio
+docker-compose restart nombre_servicio
 
 # Reinicia con tiempo de espera personalizado
-docker compose restart -t 30
+docker-compose restart -t 30
 ```
 
 #### 8. **`docker compose stop`**
@@ -199,13 +199,13 @@ Detiene los contenedores sin eliminarlos.
 
 ```bash
 # Detiene todos los servicios
-docker compose stop
+docker-compose stop
 
 # Detiene un servicio específico
-docker compose stop nombre_servicio
+docker-compose stop nombre_servicio
 
 # Detiene con timeout
-docker compose stop -t 30 nombre_servicio
+docker-compose stop -t 30 nombre_servicio
 ```
 
 #### 9. **`docker compose start`**
@@ -213,10 +213,10 @@ Inicia contenedores previamente detenidos.
 
 ```bash
 # Inicia todos los servicios
-docker compose start
+docker-compose start
 
 # Inicia servicios específicos
-docker compose start servicio1 servicio2
+docker-compose start servicio1 servicio2
 ```
 
 #### 10. **`docker compose pull`**
@@ -224,13 +224,13 @@ Descarga las imágenes más recientes de los registros.
 
 ```bash
 # Descarga todas las imágenes
-docker compose pull
+docker-compose pull
 
 # Descarga una imagen específica
-docker compose pull nombre_servicio
+docker-compose pull nombre_servicio
 
 # No solicita confirmación
-docker compose pull -q
+docker-compose pull -q
 ```
 
 #### 11. **`docker compose push`**
@@ -238,10 +238,10 @@ Sube imágenes a registros remotos.
 
 ```bash
 # Sube todas las imágenes
-docker compose push
+docker-compose push
 
 # Sube un servicio específico
-docker compose push nombre_servicio
+docker-compose push nombre_servicio
 ```
 
 #### 12. **`docker compose rm`**
@@ -249,13 +249,13 @@ Elimina contenedores detenidos.
 
 ```bash
 # Elimina contenedores detenidos
-docker compose rm
+docker-compose rm
 
 # Elimina sin pedir confirmación
-docker compose rm -f
+docker-compose rm -f
 
 # Elimina volúmenes asociados
-docker compose rm -v
+docker-compose rm -v
 ```
 
 #### 13. **`docker compose config`**
@@ -263,13 +263,13 @@ Valida y muestra la configuración del archivo docker-compose.
 
 ```bash
 # Muestra configuración procesada
-docker compose config
+docker-compose config
 
 # Valida sin mostrar salida
-docker compose config -q
+docker-compose config -q
 
 # Salida en formato JSON
-docker compose config --format json
+docker-compose config --format json
 ```
 
 #### 14. **`docker compose validate`**
@@ -277,10 +277,10 @@ Valida la sintaxis del archivo de composición.
 
 ```bash
 # Valida el archivo docker-compose.yml
-docker compose validate
+docker-compose validate
 
 # Valida archivo específico
-docker compose -f archivo.yml validate
+docker-compose -f archivo.yml validate
 ```
 
 #### 15. **`docker compose events`**
@@ -288,10 +288,10 @@ Muestra eventos en tiempo real de los contenedores.
 
 ```bash
 # Muestra eventos en tiempo real
-docker compose events
+docker-compose events
 
 # Eventos de un servicio específico
-docker compose events nombre_servicio
+docker-compose events nombre_servicio
 ```
 
 ---
@@ -302,19 +302,19 @@ Las siguientes opciones pueden usarse con cualquier comando de Docker Compose:
 
 ```bash
 # Especifica archivo de composición alternativo
-docker compose -f archivo.yml up
+docker-compose -f archivo.yml up
 
 # Especifica nombre del proyecto
-docker compose -p nombre_proyecto up
+docker-compose -p nombre_proyecto up
 
 # Especifica múltiples archivos
-docker compose -f archivo1.yml -f archivo2.yml up
+docker-compose -f archivo1.yml -f archivo2.yml up
 
 # Habilita soporte para perfiles
-docker compose --profile nombre_perfil up
+docker-compose --profile nombre_perfil up
 
 # Verbose mode (salida detallada)
-docker compose --verbose up
+docker-compose --verbose up
 ```
 
 ---
@@ -325,63 +325,63 @@ docker compose --verbose up
 
 ```bash
 cd GLPI/
-docker compose up -d
-docker compose logs -f
+docker-compose up -d
+docker-compose logs -f
 ```
 
 ### Desarrollar y Probar
 
 ```bash
 # Construir imagen con cambios recientes
-docker compose up -d --build
+docker-compose up -d --build
 
 # Acceder al contenedor
-docker compose exec -it nombre_servicio /bin/bash
+docker-compose exec -it nombre_servicio /bin/bash
 
 # Ver logs
-docker compose logs -f nombre_servicio
+docker-compose logs -f nombre_servicio
 ```
 
 ### Actualizar Servicios
 
 ```bash
 # Descargar imágenes más recientes
-docker compose pull
+docker-compose pull
 
 # Reiniciar con nuevas imágenes
-docker compose up -d
+docker-compose up -d
 
 # Verificar estado
-docker compose ps
+docker-compose ps
 ```
 
 ### Limpiar Recursos
 
 ```bash
 # Detener contenedores
-docker compose stop
+docker-compose stop
 
 # Eliminar contenedores detenidos
-docker compose rm
+docker-compose rm
 
 # Eliminar volúmenes (CUIDADO: se pierden datos)
-docker compose down -v
+docker-compose down -v
 ```
 
 ### Diagnosticar Problemas
 
 ```bash
 # Ver logs detallados
-docker compose logs nombre_servicio -f --tail 200
+docker-compose logs nombre_servicio -f --tail 200
 
 # Inspeccionar configuración
-docker compose config
+docker-compose config
 
 # Ver eventos en tiempo real
-docker compose events
+docker-compose events
 
 # Acceder a shell del contenedor
-docker compose exec -it nombre_servicio /bin/bash
+docker-compose exec -it nombre_servicio /bin/bash
 ```
 
 ---
@@ -433,4 +433,4 @@ Este proyecto está disponible bajo licencia MIT.
 ---
 
 **Última Actualización:** 27 de enero de 2026  
-**Mantenedor:** Rodrigo Acosta
+**Mantenedor:** roaco
